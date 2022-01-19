@@ -10,6 +10,7 @@
         </processorPath>
         <module name="cardiff-multi-modules.cardiff-site-module.main" />
         <module name="cardiff-multi-modules.cardiff-admin-module.main" />
+        <module name="cardiff-multi-modules.cardiff-domain-module.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">

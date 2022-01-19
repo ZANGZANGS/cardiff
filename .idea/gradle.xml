@@ -13,6 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/cardiff-admin-module" />
+            <option value="$PROJECT_DIR$/cardiff-domain-module" />
             <option value="$PROJECT_DIR$/cardiff-site-module" />
           </set>
         </option>
