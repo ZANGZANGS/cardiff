@@ -1,0 +1,4 @@
+rootProject.name = 'cardiff-multi-modules'
+
+include 'cardiff-admin-module'
+include 'cardiff-site-module'
