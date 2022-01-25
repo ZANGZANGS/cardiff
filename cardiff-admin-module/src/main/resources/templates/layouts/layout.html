@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments/head :: headFragment"></th:block>
+<body class="sb-nav-fixed">
+    <!-- topnav -->
+    <th:block th:replace="fragments/topnav :: topnavFragment"></th:block>
+    <div id="layoutSidenav">
+        <!-- sidenav -->
+        <th:block th:replace="fragments/sidenav :: sidenavFragment"></th:block>
+        <div id="layoutSidenav_content">
+            <!-- main content  START-->
+            <!--<th:block layout:fragment="content"></th:block>-->
+
+
+
+
+            <!-- main content  END-->
+            <!-- footer -->
+            <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+        </div>
+    </div>
+    <th:block th:replace="fragments/script :: scriptFragment"></th:block>
+</body>
+</html>
