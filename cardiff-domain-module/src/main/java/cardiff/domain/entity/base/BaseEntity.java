@@ -1,6 +1,4 @@
-package cardiff.domain.base;
-
-import lombok.Getter;
+package cardiff.domain.entity.base;
 
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
