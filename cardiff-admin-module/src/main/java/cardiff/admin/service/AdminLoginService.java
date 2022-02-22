@@ -1,0 +1,18 @@
+package cardiff.admin.service;
+
+import cardiff.admin.dto.AdminLoginDto;
+import cardiff.domain.entity.Admin;
+import org.springframework.ui.Model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+public interface AdminLoginService {
+    Long join(Admin admin);
+
+    boolean doLogin(AdminLoginDto.Req req, HttpServletRequest httpServletRequest);
+
+    void doLogout(HttpSession session, Model model);
+
+//    PersonModel getPerson(HttpSession session);
+}
