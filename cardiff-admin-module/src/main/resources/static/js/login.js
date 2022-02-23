@@ -21,5 +21,9 @@ function doLogin(){
 }
 
 function doLogin_successFunc(data){
-
+    if(data.success){
+        location.replace("/");
+    }else{
+        alert(data.errorMessage);
+    }
 }
