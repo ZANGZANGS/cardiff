@@ -4,8 +4,13 @@ package cardiff.admin.controller.api;
 import cardiff.admin.dto.AdminLoginDto;
 import cardiff.admin.service.AdminLoginService;
 import cardiff.domain.entity.Admin;
+import cardiff.domain.response.BasicResponse;
+import cardiff.domain.response.CommonResponse;
+import cardiff.domain.response.ErrorResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
@@ -21,11 +26,12 @@ public class SessionController {
     private final AdminLoginService adminLoginService;
 
     @PostMapping(value = "/login")
-    public Object login(@RequestBody AdminLoginDto.Req req, HttpServletRequest request){
+    public ResponseEntity login(@RequestBody AdminLoginDto.Req req, HttpServletRequest request){
 
-        boolean isLogin = adminLoginService.doLogin(req, request);
-
-        return isLogin;
+        if(!adminLoginService.doLogin(req,request)){
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(new ErrorResponse("일치하는 관리자 정보가 없습니다."));
+        }
+        return ResponseEntity.ok(new CommonResponse<>());
     }
 
     @DeleteMapping(value = "/logout")

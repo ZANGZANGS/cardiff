@@ -17,11 +17,4 @@ public class AdminLoginDto {
         private String password;
     }
 
-    @Getter
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class Res{
-        private String temp;
-    }
 }
