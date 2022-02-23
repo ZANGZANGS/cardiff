@@ -17,6 +17,11 @@ function doLogin(){
         password: $("#password").val()
     }
 
+    if (data.name.length<2 || data.password.length<4){
+        alert("이름, 비밀번호를 정확하게 입력하십시오.");
+        return;
+    }
+
     postAjax("session/login", data, doLogin_successFunc);
 }
 
