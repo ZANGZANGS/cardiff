@@ -1,19 +1,19 @@
 
-function getAjax(endpoint, data, successFunc, failFunc){
-    ajax("GET", endpoint, data, successFunc, failFunc);
+function getAjax(endpoint, data, successFunc){
+    ajax("GET", endpoint, data, successFunc);
 }
-function postAjax(endpoint, data, successFunc, failFunc){
-    ajax("POST", endpoint, data, successFunc, failFunc);
+function postAjax(endpoint, data, successFunc){
+    ajax("POST", endpoint, data, successFunc);
 }
-function putAjax(endpoint, data, successFunc, failFunc){
-    ajax("PUT", endpoint, data, successFunc, failFunc);
+function putAjax(endpoint, data, successFunc){
+    ajax("PUT", endpoint, data, successFunc);
 }
-function deleteAjax(endpoint, data, successFunc, failFunc){
-    ajax("DELETE", endpoint, data, successFunc, failFunc);
+function deleteAjax(endpoint, data, successFunc){
+    ajax("DELETE", endpoint, data, successFunc);
 }
 
 
-function ajax(method, endpoint, data, successFunc, failFunc) {
+function ajax(method, endpoint, data, successFunc) {
     const base_url = location.origin
 
     $.ajax({
@@ -30,8 +30,8 @@ function ajax(method, endpoint, data, successFunc, failFunc) {
             }
         })
         .fail(function ( res ) {
-            if(typeof(failFunc) == 'function'){
-                failFunc(res);
-            }
+            const msg = "알 수 없는 오류가 발생했습니다.\n잠시후 다시 시도해주십시오.";
+            console.log(msg);
+            alert(msg);
         });
 }
