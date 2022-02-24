@@ -12,7 +12,7 @@ public interface AdminLoginService {
 
     boolean doLogin(AdminLoginDto.Req req, HttpServletRequest httpServletRequest);
 
-    void doLogout(HttpSession session, Model model);
+    void doLogout(HttpServletRequest httpServletRequest);
 
 //    PersonModel getPerson(HttpSession session);
 }

@@ -35,10 +35,8 @@ public class SessionController {
     }
 
     @DeleteMapping(value = "/logout")
-    public Object logout(){
-
-        System.out.println("=====================");
-        System.out.println("delete");
-        return null;
+    public ResponseEntity logout(HttpServletRequest request){
+        adminLoginService.doLogout(request);
+        return ResponseEntity.ok(new CommonResponse<>());
     }
 }

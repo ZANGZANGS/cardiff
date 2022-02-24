@@ -4,12 +4,10 @@ import cardiff.admin.dto.AdminLoginDto;
 import cardiff.admin.dto.AdminSessionDto;
 import cardiff.domain.repository.AdminLoginRepository;
 import cardiff.domain.entity.Admin;
-import com.sun.net.httpserver.Authenticator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -62,7 +60,13 @@ public class AdminLoginServiceImpl implements AdminLoginService {
     }
 
     @Override
-    public void doLogout(HttpSession session, Model model) {
+    public void doLogout(HttpServletRequest httpServletRequest) {
+        HttpSession session = httpServletRequest.getSession();
+
+        if(null != session){
+            session.invalidate();
+            log.debug("관리자 로그아웃");
+        }
 
     }
 
