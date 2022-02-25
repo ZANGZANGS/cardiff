@@ -17,7 +17,7 @@ import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping(value = "/session")
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 @Slf4j
 public class SessionController {

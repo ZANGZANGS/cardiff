@@ -22,7 +22,7 @@ function doLogin(){
         return;
     }
 
-    postAjax("session/login", data, doLogin_successFunc);
+    postAjax("api/v1/login", data, doLogin_successFunc);
 }
 
 function doLogin_successFunc(data){
