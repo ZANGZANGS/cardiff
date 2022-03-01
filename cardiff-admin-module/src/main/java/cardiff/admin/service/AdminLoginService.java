@@ -10,9 +10,9 @@ import javax.servlet.http.HttpSession;
 public interface AdminLoginService {
     Long join(Admin admin);
 
-    boolean doLogin(AdminLoginDto.Req req, HttpServletRequest httpServletRequest);
+//    boolean doLogin(AdminLoginDto.Req req, HttpServletRequest httpServletRequest);
 
-    void doLogout(HttpServletRequest httpServletRequest);
+//    void doLogout(HttpServletRequest httpServletRequest);
 
 //    PersonModel getPerson(HttpSession session);
 }

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class AdminSessionDto {
 
     private Long id;
-    private String name;
+    private String username;
     private LocalDateTime lastVisitDateTime;
 
 }

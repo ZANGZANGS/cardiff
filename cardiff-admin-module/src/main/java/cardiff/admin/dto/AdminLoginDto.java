@@ -13,7 +13,7 @@ public class AdminLoginDto {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Req{
-        private String name;
+        private String username;
         private String password;
     }
 

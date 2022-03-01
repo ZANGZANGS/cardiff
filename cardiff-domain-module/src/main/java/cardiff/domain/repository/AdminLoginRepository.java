@@ -10,4 +10,5 @@ public interface AdminLoginRepository {
 
     Optional<Admin> findOne(String name, String password);
 
+    Optional<Admin> findByName(String name);
 }

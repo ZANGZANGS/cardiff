@@ -41,4 +41,18 @@ public class AdminLoginRepositoryImpl implements AdminLoginRepository {
 
     }
 
+    @Override
+    public Optional<Admin> findByName(String name) {
+        try{
+            Admin findAdmin = em.createQuery("select m from Admin m where m.name = :name", Admin.class)
+                    .setParameter("name", name)
+                    .getSingleResult();
+            return Optional.of(findAdmin);
+
+        }catch (NoResultException e){
+            log.error("회원 정보 불일치 : {}", e.getMessage());
+            return  Optional.empty();
+        }
+    }
+
 }
