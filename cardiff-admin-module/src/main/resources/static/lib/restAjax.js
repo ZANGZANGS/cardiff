@@ -22,6 +22,11 @@ function ajax(method, endpoint, data, successFunc) {
         dataType   : 'json',
         url: base_url+"/"+endpoint,
         data : JSON.stringify(data),
+        beforeSend: function (jqXHR, settings) {
+            let header = $("meta[name='_csrf_header']").attr("content");
+            let token = $("meta[name='_csrf']").attr("content");
+            jqXHR.setRequestHeader(header, token);
+        }
 
     })
         .done(function( res ) {
