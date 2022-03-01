@@ -3,6 +3,7 @@ package cardiff.domain.entity;
 import lombok.Getter;
 import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Admin {
     @Column(length = 16, unique = true)
     private String name;
 
-    @Column(length = 20)
+    @Column
     private String password;
 
     private LocalDateTime lastVisitDateTime;
@@ -33,6 +34,10 @@ public class Admin {
     public Admin(String name, String password) {
         this.name = name;
         this.password = password;
+    }
+
+    public void passwordEncoding(PasswordEncoder passwordEncoder){
+        password = passwordEncoder.encode(password);
     }
 
     //===== 연관 관계 메서드 =====//
