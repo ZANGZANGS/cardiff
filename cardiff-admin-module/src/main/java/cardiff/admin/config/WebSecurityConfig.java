@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/api/v1/join", "/api/v1/login").permitAll()
+                    .antMatchers("/login").permitAll()
                     .anyRequest().authenticated()
 //                    .anyRequest().permitAll() //개발모드: 모두 허용
                     .and()
@@ -41,7 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**", "/js/**", "/lib/**", "/bootstrap/**");
+        web.ignoring().antMatchers("/css/**", "/js/**", "/lib/**", "/bootstrap/**", "/error");
+
     }
 
     @Bean
